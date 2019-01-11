@@ -1,0 +1,15 @@
+{
+  "name": "es-next-for-begginer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "gh-pages -d _book",
+    "build": "gitbook build",
+    "serve": "gitbook serve"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "gitbook-cli": "^2.3.2"
+  },
+  "author": "Tell-y"
+}
