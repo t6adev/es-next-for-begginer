@@ -2,7 +2,7 @@
 ES2015以降、便利なArrayメソッドが多く追加されています。  
 ここでは便利なメソッドをいくつか紹介したいと思います。
 
-mapやfilterなど、基本的にはメソッドに与えられた関数の第１引数に配列の要素が渡され、第２引数に要素の順番である番号が渡されます。reduceは特殊な仕様なので注意してください。
+mapやfilterなど、基本的にはメソッドに与えられた関数の第１引数に配列の要素が渡され、第２引数に要素の順番である番号が渡されます。reduceは特殊な仕様なので注意してください。
 
 ## map()
 mapは、配列の要素に対して何かしらの処理を加え、新たに配列を生成するメソッドです。  
@@ -23,7 +23,7 @@ console.log(byeList);
 [https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/map](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ## filter()
-filterは、与えられた関数をパスした要素からなる新たな配列を生成するメソッドです。パスしたかどうかは、その関数の戻り値が真であるかどうかで判断されます。
+filterは、与えられた関数をパスした要素からなる新たな配列を生成するメソッドです。パスしたかどうかは、その関数の戻り値が真であるかどうかで判断されます。
 
 ```
 const numbers = [0, 1, 2, 3, 4, 5, 6];
@@ -42,7 +42,7 @@ console.log(more100Numbers);
 [https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/filter](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ## find()
-findは、条件にヒットした値を返すメソッドです。条件をチェックする関数を与え、その戻り値が真である場合に配列の要素を返します。
+findは、条件にヒットした値を返すメソッドです。条件をチェックする関数を与え、その戻り値が真である場合に配列の要素を返します。
 条件にヒットした最初の値を返すことに注意しましょう。また、条件にヒットしない場合は`undefined`を返します。
 
 ```
@@ -62,9 +62,9 @@ console.log(more100Number);
 [https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/find](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 ## findIndex()
-findIndexは、findと似ています。findの場合は、条件にヒットした配列の`値`を返しましたが、findIndexは、配列の`要素番号`を返します。
+findIndexは、findと似ています。findの場合は、条件にヒットした配列の`値`を返しましたが、findIndexは、配列の`要素番号`を返します。
   
-条件にヒットしない場合、`-1`を返します。
+条件にヒットしない場合、`-1`を返します。
 
 ```
 const numbers = [0, 1, 2, 3, 4, 5, 6];
@@ -87,7 +87,7 @@ reduceは他とはちょっと違った特殊なメソッドです。
 細かな説明はこちらのドキュメントを参照してください。  
 [https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
-例を用いて説明すると、数値をもつ配列からすべてを合計した値を得る(数学の総和)処理を実現できます。
+例を用いて説明すると、数値をもつ配列からすべてを合計した値を得る(数学の総和)処理を実現できます。
 
 ```
 const numbers = [1, 2, 3, 4];
@@ -100,9 +100,9 @@ const result2 = numbers.reduce(sumFn);
 
 callback関数は、第一引数に`前回のcallbackの戻り値`、第二引数に`現在の配列の要素`を受け取ります。
 
-注意として、`reduce()`の第二引数（初期値）が与えられた場合の、最初のcallback関数の引数値が変わります。
+注意として、`reduce()`の第二引数（初期値）が与えられた場合の、最初のcallback関数の引数値が変わります。
 
-上記の例の場合で説明します。
+上記の例の場合で説明します。
 #### 初期値が与えられた場合
 `const result1 = numbers.reduce(sumFn, 0);`の場合です。  
 初回、callback関数の第一引数に初期値が渡され、第二引数に配列の0番目の要素が渡されます。
@@ -115,7 +115,7 @@ callback関数は、第一引数に`前回のcallbackの戻り値`、第二引�
 
 #### 初期値が与えられない場合
 `const result2 = numbers.reduce(sumFn);`の場合です。  
-初回、callback関数の第一引数に配列の0番目が渡され、第二引数に配列の1番目の要素が渡されます。
+初回、callback関数の第一引数に配列の0番目が渡され、第二引数に配列の1番目の要素が渡されます。
 |sumFn|amount|current|sumFnの戻り値|
 |:-:|:-:|:-:|:-:|
 |初回|1|2|3|
@@ -123,8 +123,8 @@ callback関数は、第一引数に`前回のcallbackの戻り値`、第二引�
 |3回目|6|4|10|
 
 ### 戻り値の型は自由
-上記の例では戻り値はNumber型でしたが、配列の内容に関わらず、戻り値は文字列や配列、オブジェクトでも可能です。  
-例えば、数値を持つ配列から、奇数と偶数にわけた配列をプロパティとして持つオブジェクトを得る処理を考える場合、以下のように書くことが出来ます。
+上記の例では戻り値はNumber型でしたが、配列の内容に関わらず、戻り値は文字列や配列、オブジェクトでも可能です。  
+例えば、数値を持つ配列から、奇数と偶数にわけた配列をプロパティとして持つオブジェクトを得る処理を考える場合、以下のように書くことが出来ます。
 
 ```
 const numbers = [1, 2, 3, 4];
