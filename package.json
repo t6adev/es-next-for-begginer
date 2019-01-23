@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "deploy": "gh-pages -d _book",
+    "deploy": "npm run build && gh-pages -d _book",
     "build": "gitbook build",
     "serve": "gitbook serve"
   },
