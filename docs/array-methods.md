@@ -107,6 +107,7 @@ callback関数は、第一引数に`前回のcallbackの戻り値`、第二引�
 `const result1 = numbers.reduce(sumFn, 0);`の場合です。  
 初回、callback関数の第一引数に初期値が渡され、第二引数に配列の0番目の要素が渡されます。  
 
+
 |sumFn|amount|current|sumFnの戻り値|
 |:-:|:-:|:-:|:-:|
 |初回|0|1|1|
@@ -117,6 +118,7 @@ callback関数は、第一引数に`前回のcallbackの戻り値`、第二引�
 #### 初期値が与えられない場合
 `const result2 = numbers.reduce(sumFn);`の場合です。  
 初回、callback関数の第一引数に配列の0番目が渡され、第二引数に配列の1番目の要素が渡されます。  
+
 
 |sumFn|amount|current|sumFnの戻り値|
 |:-:|:-:|:-:|:-:|
